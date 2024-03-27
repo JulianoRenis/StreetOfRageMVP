@@ -115,7 +115,10 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     override fun movimentarPersonagem(deltaX: Int) {
-
+        //config
+        val layoutParams = binding.imgAdam.layoutParams as ConstraintLayout.LayoutParams
+        layoutParams.leftMargin += deltaX
+        binding.imgAdam.layoutParams = layoutParams
     }
 
 
