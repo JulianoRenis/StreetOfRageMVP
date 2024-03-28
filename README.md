@@ -1,3 +1,3 @@
 # Street of Rage MVP
 
-![GIF de exemplo](StreetOfRageMVP/gifstreet.gif)
+<img alt="GIF de exemplo" height="300" src="StreetOfRageMVP/gifstreet.gif" width="480"/>
