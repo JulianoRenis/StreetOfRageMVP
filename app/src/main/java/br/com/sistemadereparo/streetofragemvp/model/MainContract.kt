@@ -16,8 +16,8 @@ interface MainContract {
     }
 
     interface Presenter {
-        fun botaoParaEsquerdaPrecionado()
-        fun botaoParaDiretaPrecionado()
+        fun botaoParaEsquerdaPressionado()
+        fun botaoParaDiretaPressionado()
         fun botaoParaEsquerdaLiberado()
         fun botaoParaDireitaLiberado()
         fun botaoDeSocoClicado()

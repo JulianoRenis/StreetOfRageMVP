@@ -10,13 +10,13 @@ class MainPresenter(private val view: MainContract.View) : MainContract.Presente
 
 
 
-    override fun botaoParaEsquerdaPrecionado() {
+    override fun botaoParaEsquerdaPressionado() {
         view.animacaoComecandoAndar()
         estaMovendoParaEsquerda = true
         movendoParaEsquerda()
     }
 
-    override fun botaoParaDiretaPrecionado() {
+    override fun botaoParaDiretaPressionado() {
         view.animacaoComecandoAndar()
         estaMovendoParaDireita = true
         movendoParaDireita()

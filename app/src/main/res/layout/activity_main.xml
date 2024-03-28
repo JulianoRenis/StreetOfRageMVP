@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/backStage"
         android:layout_width="match_parent"
@@ -17,6 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <FrameLayout
             android:id="@+id/framelayoutStageOne"
@@ -29,6 +32,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/stage_one_one" >
+
 
             <ImageView
                 android:id="@+id/imageBackgroundStageOne"
@@ -45,9 +49,34 @@
             android:layout_height="78dp"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="25dp"
+            android:scaleType="fitStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/adam_one" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:progress="100"
+            android:progressBackgroundTint="#FFFFFF"
+            android:progressTint="#FF5722"
+            app:layout_constraintStart_toStartOf="@+id/backStage"
+            app:layout_constraintTop_toTopOf="@+id/backStage" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Energia"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar2"
+            app:layout_constraintStart_toStartOf="@+id/progressBar2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button

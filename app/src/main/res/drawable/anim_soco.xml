@@ -3,8 +3,9 @@
     android:id="@+id/idle_animation"
     android:oneshot="false">
     <item android:drawable="@drawable/adam_zero" android:duration="200" />
-    <item android:drawable="@drawable/soco" android:duration="250" />
+    <item android:drawable="@drawable/soco"  android:duration="250" />
     <item android:drawable="@drawable/adam_zero" android:duration="200" />
+
 
 
 </animation-list>

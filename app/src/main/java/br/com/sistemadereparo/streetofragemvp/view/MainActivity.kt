@@ -13,6 +13,8 @@ import br.com.sistemadereparo.streetofragemvp.presenter.MainPresenter
 class MainActivity : AppCompatActivity(), MainContract.View {
     private lateinit var presenter: MainContract.Presenter
     private var velocidadeDeslocamentoDoPersonagem = 10
+    private var botaoPressionado = false
+
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         binding.btnLeft.setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    presenter.botaoParaEsquerdaPrecionado()
+                    presenter.botaoParaEsquerdaPressionado()
                     true
                 }
                 MotionEvent.ACTION_UP -> {
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         binding.btnRight.setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    presenter.botaoParaDiretaPrecionado()
+                    presenter.botaoParaDiretaPressionado()
                     true
                 }
                 MotionEvent.ACTION_UP -> {
@@ -54,12 +56,10 @@ class MainActivity : AppCompatActivity(), MainContract.View {
             }
         }
         binding.btnSoco.setOnClickListener {
-
             // Inicie a animação de soco
             presenter.botaoDeSocoClicado()
 
         }
-
 
     }
 
