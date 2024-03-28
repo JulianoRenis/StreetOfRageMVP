@@ -1,3 +1,3 @@
 # Street of Rage MVP
 
-![Alt text](gif-street.gif)
+![GIF de exemplo](StreetOfRageMVP/gifstreet.gif)
