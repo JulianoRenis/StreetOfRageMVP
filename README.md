@@ -1,3 +1,3 @@
 # Street of Rage MVP
 
-<img alt="gif street gif" height="300" src="https://github.com/JulianoRenis/StreetOfRageMVP/assets/119117689/ec773746-35e3-41c6-b821-6984a2e532d7" width="480"/>
+<img alt="gif street gif" height="350" src="https://github.com/JulianoRenis/StreetOfRageMVP/assets/119117689/22f65b40-814f-4d8f-b853-fcc500cff452" width="780"/>
