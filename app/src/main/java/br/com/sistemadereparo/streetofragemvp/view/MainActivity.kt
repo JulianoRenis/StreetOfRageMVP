@@ -1,8 +1,10 @@
 package br.com.sistemadereparo.streetofragemvp.view
 
+import android.graphics.Rect
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import androidx.constraintlayout.widget.ConstraintLayout
 import br.com.sistemadereparo.streetofragemvp.R
@@ -14,6 +16,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     private lateinit var presenter: MainContract.Presenter
     private var velocidadeDeslocamentoDoPersonagem = 10
     private var botaoPressionado = false
+    private var lastX: Float = 0.toFloat()
+    private val SCROLL_THRESHOLD = 100 // Ajuste este valor conforme necessário
 
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -69,12 +73,14 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         val posicaoX = binding.imgAdam.x
         val novaPosicaoX = posicaoX - velocidadeDeslocamentoDoPersonagem
         binding.imgAdam.x = novaPosicaoX
+        moveElement(novaPosicaoX)
     }
 
     override fun movePersonaParaDireita() {
         val posicaoX = binding.imgAdam.x
         val novaPosicaoX = posicaoX + velocidadeDeslocamentoDoPersonagem
         binding.imgAdam.x = novaPosicaoX
+        moveElement(novaPosicaoX)
     }
 
     override fun onStart() {
@@ -119,6 +125,27 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         val layoutParams = binding.imgAdam.layoutParams as ConstraintLayout.LayoutParams
         layoutParams.leftMargin += deltaX
         binding.imgAdam.layoutParams = layoutParams
+    }
+
+    private fun moveElement(deltaX: Float) {
+
+        // Verifica se o elemento está perto das bordas do ScrollView
+        val visibleRect = Rect()
+        binding.scrolViewHorizontal.getGlobalVisibleRect(visibleRect)
+
+        val elementRect = Rect()
+        binding.imgAdam.getGlobalVisibleRect(elementRect)
+
+        val screenWidth = visibleRect.width()
+        val threshold = screenWidth / 2 // Defina um limite para ajustar conforme necessário
+
+
+        binding.scrolViewHorizontal.scrollTo(deltaX.toInt()-threshold, 0)
+
+
+        Log.d("Limites"," left: ${elementRect.left} < ${visibleRect.left} threshold: ${threshold} = ${elementRect.left < visibleRect.left + threshold}")
+
+
     }
 
 
