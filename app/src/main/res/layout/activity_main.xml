@@ -1,109 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.MainActivity">
 
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/backStage"
+    <HorizontalScrollView
+        android:id="@+id/scrolViewHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="200dp">
 
-
-        <FrameLayout
-            android:id="@+id/framelayoutStageOne"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/backStage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:scrollbarAlwaysDrawHorizontalTrack="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/stage_one_one" >
+            android:layout_height="match_parent">
 
 
-            <ImageView
-                android:id="@+id/imageBackgroundStageOne"
+            <FrameLayout
+                android:id="@+id/framelayoutStageOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/stage_one_one"
-                android:scaleType="centerCrop" />
+                android:background="@android:color/transparent"
+                android:scrollbarAlwaysDrawHorizontalTrack="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/stage_one_one">
 
-        </FrameLayout>
 
-        <ImageView
-            android:id="@+id/imgAdam"
-            android:layout_width="58dp"
-            android:layout_height="78dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginBottom="25dp"
-            android:scaleType="fitStart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/adam_one" />
+                <ImageView
+                    android:id="@+id/imageBackgroundStageOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/stage_one_one" />
 
-        <ProgressBar
-            android:id="@+id/progressBar2"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:progress="100"
-            android:progressBackgroundTint="#FFFFFF"
-            android:progressTint="#FF5722"
-            app:layout_constraintStart_toStartOf="@+id/backStage"
-            app:layout_constraintTop_toTopOf="@+id/backStage" />
+            </FrameLayout>
 
-        <TextView
-            android:id="@+id/textView2"
+            <ImageView
+                android:id="@+id/imgAdam"
+                android:layout_width="58dp"
+                android:layout_height="78dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="25dp"
+                android:scaleType="fitStart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/adam_one" />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:progress="100"
+                android:progressBackgroundTint="#FFFFFF"
+                android:progressTint="#FF5722"
+                app:layout_constraintStart_toStartOf="@+id/backStage"
+                app:layout_constraintTop_toTopOf="@+id/backStage" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Energia"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/progressBar2"
+                app:layout_constraintStart_toStartOf="@+id/progressBar2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Energia"
-            android:textColor="@color/white"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/progressBar2"
-            app:layout_constraintStart_toStartOf="@+id/progressBar2" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="L" />
 
-    <Button
-        android:id="@+id/btnLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="55dp"
-        android:text="L"
-        app:layout_constraintStart_toStartOf="@+id/backStage"
-        app:layout_constraintTop_toBottomOf="@+id/backStage" />
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="R" />
 
-    <Button
-        android:id="@+id/btnRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="R"
-        app:layout_constraintStart_toEndOf="@+id/btnLeft"
-        app:layout_constraintTop_toTopOf="@+id/btnLeft" />
-
-    <Button
-        android:id="@+id/btnSoco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="Soco"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnRight" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnSoco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="Soco" />
+    </LinearLayout>
+</LinearLayout>
